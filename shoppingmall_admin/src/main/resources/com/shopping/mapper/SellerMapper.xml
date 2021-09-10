@@ -3,8 +3,8 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.shopping.mapper.SellerMapper">
 <insert id="insertSeller">
-        insert into seller_info(si_id,si_pwd,si_name,si_address,si_email,si_phone)
-        values (#{si_id},#{si_pwd},#{si_name},#{si_address},#{si_email},#{si_phone})
+        insert into seller_info(si_id,si_pwd,si_name,si_email,si_phone)
+        values (#{si_id},#{si_pwd},#{si_name},#{si_email},#{si_phone})
 </insert>
 <select id="selectSellerById" resultType="java.lang.Integer">
     select count(*) from seller_info where si_id=#{id}

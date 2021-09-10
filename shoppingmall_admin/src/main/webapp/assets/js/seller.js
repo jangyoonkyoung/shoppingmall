@@ -1,24 +1,23 @@
 $(function(){
     //아이디 중복 체크
-    let idChk= false;
-    let emailChk =false;
+    let idChk= true;
+    let emailChk =true;
 
     $("#regist").click(function(){
+        if(idChk==true){
+            alert("아이디 중복여부를 확인해주세요.");
+            return;
+        }
         
         let id = $("#seller_id").val();
         let pwd= $("#seller_pwd").val();
         let pwd_con= $("#seller_pwd_con").val();
         let name= $("#seller_name").val();
-        let addr= $("#seller_addr").val();
         let email= $("#seller_email").val();
         let phone= $("#seller_phone").val();
         
         const pattern = /\s/g;
 
-        if(idChk==false){
-            alert("아이디 중복여부를 확인해주세요.");
-            return;
-        }
         if (id == "" || id == null || id == undefined) {
             alert("아이디를 입력하세요.");
             return;
@@ -31,7 +30,6 @@ $(function(){
             alert("아이디는 4자 이상으로 입력해주세요");
             return;
         }
-
         if (pwd == "" || pwd == null || pwd == undefined) {
             alert("비밀번호를 입력하세요.");
             return;
@@ -56,10 +54,6 @@ $(function(){
             alert("이름에는 공백문자가 들어갈 수 없습니다.");
             return;
         }
-        if(addr == "" || name == null || name == undefined) {
-            alert("주소를 입력해주세요");
-            return;
-        }
         const patternEmail = /^[0-9a-zA-Z]([-_\.?]?[0-9a-zA-Z])*@[0-9a-zA]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
         if (email == "" || email == null || email == undefined) {
             alert("이메일을 입력하세요");
@@ -73,7 +67,7 @@ $(function(){
             alert("올바른 이메일 형식을 입력하세요 \n 예시:nnn@naver.com");
             return;
         }
-        if(emailChk==false){
+        if(emailChk==true){
             alert("이메일 중복여부를 확인해주세요.");
             return;
         }
@@ -86,7 +80,6 @@ $(function(){
             si_id:id,
             si_pwd:pwd,
             si_name:name,
-            si_address:addr,
             si_email:email,
             si_phone:phone
         };
@@ -128,6 +121,7 @@ $(function(){
             }
         })
     })
+    
     $("#dup_check_Email").click(function(){
         const pattern = /\s/g;
         const patternEmail = /^[0-9a-zA-Z]([-_\.?]?[0-9a-zA-Z])*@[0-9a-zA]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;

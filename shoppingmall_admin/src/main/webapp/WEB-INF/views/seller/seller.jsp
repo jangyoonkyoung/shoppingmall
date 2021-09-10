@@ -9,7 +9,23 @@
     <title>판매자 페이지</title>
     <script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="/assets/js/seller.js"></script>
-
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script>
+        window.onload = function(){
+             //주소입력칸을 클릭하면
+                //카카오 지도 발생
+                $("#chk_addr").click(function(){
+                    new daum.Postcode({
+                        oncomplete: function(data) { //선택시 입력값 세팅
+                            $("#address").val(data.address); // 주소 넣기
+                            $("#user_address_detail").focus(); //상세입력 포커싱
+                            
+                        }
+                    }).open();
+                    self.close();
+                });
+            }
+        </script>
 </head>
 <body>
     <div>
@@ -31,10 +47,6 @@
                 <tr>
                     <td>판매자명</td>
                     <td><input type="text" id="seller_name"></td>
-                </tr>
-                <tr>
-                    <td>주소</td>
-                    <td><input type="text" id="seller_addr"></td>
                 </tr>
                 <tr>
                     <td>이메일</td>
