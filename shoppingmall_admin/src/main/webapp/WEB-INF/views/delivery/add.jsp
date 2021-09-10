@@ -19,6 +19,7 @@
             <tr>
                 <td>배송사명</td>
                 <td><input type="text" id="di_name"></td>
+                <td><button type="button" id="dup_check_name">중복체크</button></td>
             </tr>
             <tr>
                 <td>전화번호</td>

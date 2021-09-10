@@ -1,5 +1,13 @@
 $(function(){
+
+    let nameChk= false;
+
     $("#add").click(function(){
+    if(nameChk==false){
+        alert("배송자명 중복여부를 확인해주세요.");
+        return;
+    }
+
     let di_name = $("#di_name").val(); 
     if(di_name=="" || di_name==null || di_name==undefined){
         alert("배달자 명을 입력하세요");
@@ -32,4 +40,26 @@ $(function(){
         }
     })
     });
+
+    $("#dup_check_name").click(function(){
+
+        let di_name = $("#di_name").val(); 
+        if(di_name=="" || di_name==null || di_name==undefined){
+            alert("배달자 명을 입력하세요");
+            return;    
+        }  
+
+        $.ajax({
+            type:"get",
+            url:"/delivery/chk?name="+di_name,
+            success:function(r){
+                alert(r.message);
+                nameChk=r.status
+            }
+        })
+    })
+    $("#di_name").change(function(){
+        nameChk=false;
+    });
+
 })
