@@ -8,4 +8,5 @@ import org.apache.ibatis.annotations.Mapper;
 public interface SellerMapper {
     public void insertSeller(SellerInfoVO vo);
     public Integer selectSellerById(String id);
+    public Integer selectSellerByEmail(String email);
 }

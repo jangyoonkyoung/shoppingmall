@@ -32,16 +32,29 @@ public class SellerAPIController {
         return resultMap;
     }
     //아이디 중복 체크 검사
-    @GetMapping("/seller/isDuplicated")
-    public Map<String, Object> getIsDuplicated(@RequestParam String id){
+    @GetMapping("/seller/isDuplicatedId")
+    public Map<String, Object> getIsDuplicatedId(@RequestParam String id){
         Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
-        if(s_service.isDuplicated(id)){
+        if(s_service.isDuplicatedId(id)){
             resultMap.put("status",true);
             resultMap.put("message","아이디가 중복됩니다.");
         }
         else{
             resultMap.put("status",false);
             resultMap.put("message","가입 가능한 아이디 입니다.");
+        }
+        return resultMap;
+    }
+    @GetMapping("/seller/isDuplicatedEmail")
+    public Map<String, Object> getIsDuplicatedEmail(@RequestParam String email){
+        Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
+        if(s_service.isDuplicatedEmail(email)){
+            resultMap.put("status",true);
+            resultMap.put("message","이메일이 중복됩니다.");
+        }
+        else{
+            resultMap.put("status",false);
+            resultMap.put("message","가입 가능한 이메일 입니다.");
         }
         return resultMap;
     }

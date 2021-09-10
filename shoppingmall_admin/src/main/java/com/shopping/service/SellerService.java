@@ -37,12 +37,19 @@ public class SellerService {
         mapper.insertSeller(vo);
         return true;
     }
-    public boolean isDuplicated(String id){
+    public boolean isDuplicatedId(String id){
         Integer r =mapper.selectSellerById(id);
         if(r==0){
             return false; //해당 아이디로 가입된 가입자가 없다.
         }
         return true; //해당 아이디로 가입된 가입자가 있다.
+    }
+    public boolean isDuplicatedEmail(String email){
+        Integer r =mapper.selectSellerByEmail(email);
+        if(r==0){
+            return false; //해당 이메일로 가입된 가입자가 없다.
+        }
+        return true; //해당 이메일로 가입된 가입자가 있다.
     }
 
 }

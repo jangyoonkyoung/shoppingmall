@@ -39,6 +39,7 @@
                 <tr>
                     <td>이메일</td>
                     <td><input type="text" id="seller_email"></td>
+                    <td><button type="button" id="dup_check_Email">중복체크</button></td>
                 </tr>
                 <tr>
                     <td>전화번호</td>

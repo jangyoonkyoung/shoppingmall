@@ -9,4 +9,7 @@
 <select id="selectSellerById" resultType="java.lang.Integer">
     select count(*) from seller_info where si_id=#{id}
 </select>
+<select id="selectSellerByEmail" resultType="java.lang.Integer">
+    select count(*) from seller_info where si_email=#{email}
+</select>
 </mapper>
