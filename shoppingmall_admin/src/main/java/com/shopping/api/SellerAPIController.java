@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class SellerAPIController {
     @Autowired SellerService s_service;
+    //seller 등록하기
     @PostMapping("/seller/regist")
     public Map<String, Object> postSellerRegist(@RequestBody SellerInfoVO vo){
         Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
@@ -45,6 +46,7 @@ public class SellerAPIController {
         }
         return resultMap;
     }
+    //이메일 중복 체크 검사
     @GetMapping("/seller/isDuplicatedEmail")
     public Map<String, Object> getIsDuplicatedEmail(@RequestParam String email){
         Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
