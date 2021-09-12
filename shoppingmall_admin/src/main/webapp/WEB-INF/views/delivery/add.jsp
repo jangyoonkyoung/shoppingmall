@@ -13,6 +13,7 @@
 </head>
 
 <body>
+    <%@include file="/WEB-INF/views/includes/header.jsp"%>
     <h1>배송사 관리 페이지</h1>
     <table>
         <tbody>

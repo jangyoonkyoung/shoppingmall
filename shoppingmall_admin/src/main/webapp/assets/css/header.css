@@ -1,0 +1,30 @@
+/* @font-face {
+    font-family: 'Cafe24Ssurround';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+} */
+
+header {padding:10px; border-bottom: 1px solid #eee;}
+.header {
+    text-align: center;
+    position: relative;
+    width:1100px; margin:0 auto;
+    font-family: "Noto Sans KR";
+    font-weight: 700;
+
+}
+#logo img {width: 100px}
+.header ul li a {
+    color: #333; text-decoration: none;
+    font-size: 20px; display: inline-block;
+    padding:20px;
+    font-family: "Noto Sans KR";
+}
+
+.header ul li {float: left;}
+.left_menu {position: absolute; left: 0; top: 40px;}
+.right_menu {position: absolute; right: 0; top: 40px;}
+.header ul li a:hover {
+    color:#F8AD5F;
+}
