@@ -1,12 +1,14 @@
 package com.shopping.api;
 
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 import com.shopping.service.SellerService;
 import com.shopping.vo.SellerInfoVO;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -58,6 +60,20 @@ public class SellerAPIController {
             resultMap.put("status",false);
             resultMap.put("message","가입 가능한 이메일 입니다.");
         }
+        return resultMap;
+    }
+    @GetMapping("/seller/list")
+    public Map<String, Object> selectSellerList (){
+        Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
+        List<SellerInfoVO> list = s_service.selectSellerList();
+        resultMap.put("data",list);
+        return resultMap;
+    }
+    @DeleteMapping("/seller/delete")
+    public Map<String, Object> sellerDelete(@RequestParam Integer seq){
+        Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
+        s_service.sellerDelete(seq);
+        resultMap.put("message", "삭제되었습니다.");
         return resultMap;
     }
 }

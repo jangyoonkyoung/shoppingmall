@@ -1,6 +1,7 @@
 package com.shopping.service;
 
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 import com.shopping.mapper.CategoryMapper;
@@ -31,6 +32,11 @@ public class CategoryService {
     public boolean isbuplicatedName (String name){
         return mapper.selectCategoryName(name) > 0;
     }
+    public List<CategoryVO> cateListAll(){
+        return mapper.cateListAll();
+    }
     
-    
+    public void deleteCategory(Integer seq){
+        mapper.deleteCategory(seq);
+    }    
 }

@@ -1,56 +1,40 @@
 <%@page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%
-    response.setHeader("Cache-Control", "no-store");
-    response.setHeader("Pragma", "no-cache");
-    response.setDateHeader("Expires", 0);
-%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/assets/css/reset.css">
     <link rel="stylesheet" href="/assets/css/header.css">
 </head>
 <body>
     <header>
-        <div class="header">
-            <ul class="left_menu">
+        <a href="/" id="logo">
+            <img src="/assets/images/logo_x2.png">
+        </a>
+        <nav id="gnb">
+            <ul>
                 <li>
-                    <a href="/category/add">카테고리 추가</a>
+                    <a href="/category/add" id="category">카테고리 관리</a>
                 </li>
                 <li>
-                    <a href="/delivery/add">배송사 추가</a>
+                    <a href="/seller/regist" id="shop">업체 관리</a>
                 </li>
                 <li>
-                    <a href="/seller/regist">판매자 추가</a>
-                </li>
-                <!-- <li>
-                    <a href="#">oooo</a>
-                </li> -->
-            </ul>
-            <a href="/" id="logo">
-                <img src="/assets/images/logo_x2.png">
-            </a>
-            <ul class="right_menu">
-                <li>
-                    <a href="#">@</a>
+                    <a href="/delivery/add" id="delivery">배송업체 관리</a>
                 </li>
                 <li>
-                    <a href="#">@</a>
+                    <a href="/product" id="product">상품 관리</a>
                 </li>
                 <li>
-                    <a href="#">@</a>
+                    <a href="#" id="member">회원 관리</a>
                 </li>
                 <li>
-                    <a href="#">@</a>
+                    <a href="#" id="recommand">추천상품 관리</a>
                 </li>
             </ul>
-        </div>
+        </nav>
     </header>
 </body>
-</html>    
+</html>

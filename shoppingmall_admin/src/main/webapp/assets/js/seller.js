@@ -158,4 +158,40 @@ $(function(){
     $("#seller_email").change(function(){
         emailChk=false;
     });
+
+    $.ajax({
+        type:"get",
+        url:"/seller/list",
+        success:function(r){
+            // console.log(r);
+            for(let i=0; i<r.data.length; i++){
+                let tag =
+                '<tr>'+
+                        '<td>'+(i+1)+'</td>'+
+                        '<td>'+r.data[i].si_id+'</td>'+
+                        '<td>'+r.data[i].si_name+'</td>'+
+                        '<td>'+r.data[i].si_email+'</td>'+
+                        '<td>'+r.data[i].si_phone+'</td>'+
+                        '<td>'+r.data[i].si_grade+'</td>'+
+                        '<td>'+
+                        '<button class="delete" data-seq="'+r.data[i].si_seq+'">삭제</button>'+
+                    '</td>'+
+                    '</tr>'
+                    $(".seller_tbody").append(tag);
+            }
+            $(".delete").click(function(){
+                let seq=$(this).attr("data-seq");
+                if(confirm("삭제하시겠습니까?"));
+                $.ajax({
+                    type:"delete",
+                    url:"/seller/delete?seq="+seq,
+                    success:function(r){
+                        console.log(r);
+                        alert(r.message);
+                        location.reload();
+                    }
+                })
+            })
+        }
+    })
 })

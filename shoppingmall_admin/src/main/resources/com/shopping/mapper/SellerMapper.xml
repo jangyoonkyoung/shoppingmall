@@ -12,4 +12,13 @@
 <select id="selectSellerByEmail" resultType="java.lang.Integer">
     select count(*) from seller_info where si_email=#{email}
 </select>
+<select id="selectSellerList" resultType="com.shopping.vo.SellerInfoVO">
+    select * from seller_info
+</select>
+<delete id="sellerDelete">
+    delete from seller_info where si_seq=#{seq}
+</delete>
+<select id="selectSellerName" resultType="java.lang.String">
+    select si_name from seller_info where si_seq=#{seq}
+</select>
 </mapper>

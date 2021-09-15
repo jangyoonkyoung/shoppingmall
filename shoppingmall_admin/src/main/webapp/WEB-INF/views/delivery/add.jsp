@@ -37,6 +37,23 @@
             </tr>
         </tbody>
     </table>
+    <div class="delivery_list">
+        <table class="delivery_table">
+            <thead>
+                <tr>
+                    <td>번호</td>
+                    <td>배송사</td>
+                    <td>전화번호</td>
+                    <td>비용</td>
+                </tr>
+            </thead>
+            <tbody class="delivery_tbody">
+                
+            </tbody>
+
+        </table>
+
+    </div>
 </body>
 
 </html>

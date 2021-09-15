@@ -1,12 +1,14 @@
 package com.shopping.api;
 
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 import com.shopping.service.DeliveryService;
 import com.shopping.vo.DeliveryVO;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -30,6 +32,20 @@ public class DeliveryAPIController {
         else{
             resultMap.put("message","["+name+"은 등록 가능합니다.");
         }
+        return resultMap;
+    }
+    @GetMapping("/delivery/list")
+    public Map<String, Object> selectDeliveryAll(){
+        Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
+        List<DeliveryVO> list = service.selectDeliveryAll();
+        resultMap.put("data",list);
+        return resultMap;
+    }
+    @DeleteMapping("/delete/delivery")
+    public Map<String , Object> deleteDelivery(@RequestParam Integer seq){
+        Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
+        service.deleteDelivery(seq);
+        resultMap.put("message", "삭제되었습니다.");
         return resultMap;
     }
 }

@@ -1,5 +1,7 @@
 package com.shopping.service;
 
+import java.util.List;
+
 import com.shopping.mapper.SellerMapper;
 import com.shopping.vo.SellerInfoVO;
 
@@ -18,6 +20,7 @@ public class SellerService {
         mapper.insertSeller(vo);
         return true;
     }
+
     public boolean isDuplicatedId(String id){
         Integer r =mapper.selectSellerById(id);
         if(r==0){
@@ -25,6 +28,7 @@ public class SellerService {
         }
         return true; //해당 아이디로 가입된 가입자가 있다.
     }
+
     public boolean isDuplicatedEmail(String email){
         Integer r =mapper.selectSellerByEmail(email);
         if(r==0){
@@ -33,4 +37,10 @@ public class SellerService {
         return true; //해당 이메일로 가입된 가입자가 있다.
     }
 
+    public List<SellerInfoVO> selectSellerList(){
+        return mapper.selectSellerList();
+    }
+    public void sellerDelete(Integer seq){
+        mapper.sellerDelete(seq);
+    }
 }

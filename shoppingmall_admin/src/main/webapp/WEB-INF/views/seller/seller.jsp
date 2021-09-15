@@ -46,6 +46,23 @@
                 </tr>
             </tbody>
         </table>
+        <div class="seller_list">
+            <table class="seller_table">
+                <thead>
+                    <tr>
+                        <td>번호</td>
+                        <td>아이디</td>
+                        <td>판매자명</td>
+                        <td>이메일</td>
+                        <td>전화번호</td>
+                        <td>등급</td>
+                    </tr>
+                </thead>
+                <tbody class="seller_tbody">
+
+                </tbody>
+            </table>
+        </div>
     </div>
 </body>
 </html>    

@@ -8,4 +8,13 @@
 <select id="selectCategoryName" resultType="java.lang.Integer">
     select count(*) from category where cate_name=#{cate_name}
 </select>
+<select id="cateListAll" resultType="com.shopping.vo.CategoryVO">
+    select * from category 
+</select>
+<delete id="deleteCategory">
+    delete from category where cate_seq = #{cate_seq} 
+</delete>
+<select id="selectCategoryByName" resultType="java.lang.String">
+        select cate_name from category where cate_seq=#{seq}
+</select>
 </mapper>

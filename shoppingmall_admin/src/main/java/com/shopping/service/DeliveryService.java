@@ -1,6 +1,7 @@
 package com.shopping.service;
 
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 import com.shopping.mapper.DeliveryMapper;
@@ -29,6 +30,12 @@ public class DeliveryService {
     }
     public boolean isDoplicatedByName(String name){
         return mapper.selectDeliveryById(name) > 0;
+    }
+    public List<DeliveryVO> selectDeliveryAll(){
+        return mapper.selectDeliveryAll();
+    }
+    public void deleteDelivery(Integer seq){
+        mapper.deleteDelivery(seq);
     }
 
 }
