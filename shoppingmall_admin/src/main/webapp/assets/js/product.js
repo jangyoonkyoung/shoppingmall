@@ -1,6 +1,61 @@
 $(function(){
 
     getProduct();
+    function getProduct(keyword, cate_seq, offset){
+        $("#product_tbody").html("");
+        let url = "/product/list";
+        if(keyword == undefined || keyword == null) {
+            keyword = "";
+        }
+        url += "?keyword="+keyword
+        if(cate_seq != undefined && cate_seq != null) {
+            url += "&category="+cate_seq;
+        }
+        if(offset != undefined && offset != null) {
+            url += "&offset="+offset;
+        }
+        $.ajax({
+            type:"get",
+            url:url,
+            success:function(r){
+                for(let i=0; i<r.data.length; i++){
+                    // console.log(r.data.length);
+                    let tag =
+                    '<tr>'+
+                    '<td>'+(i+1)+'</td>'+
+                    '<td>'+r.data[i].pi_name+'</td>'+
+                    '<td>'+r.data[i].category_name+'</td>'+
+                    '<td>'+r.data[i].pi_stock+'</td>'+
+                    '<td>'+r.data[i].seller_name+'</td>'+
+                    '<td>'+ makeDate(new Date(r.data[i].pi_create_dt))+'</td>'+
+                    '<td>'+r.data[i].pi_discount_rate+'</td>'+
+                    '<td>'+r.data[i].pi_point_rate+'</td>'+
+                    '<td>'+r.data[i].pi_caution+'</td>'+
+                    '<td>'+r.data[i].pi_weight+'</td>'+
+                    '<td>'+r.data[i].delivery_name+'</td>'+
+                    '<td>'+r.data[i].pi_price+'</td>'+
+                    '<td>'+
+                    '<button class="product_delete" data-seq="'+r.data[i].pi_seq+'">삭제</button>'+
+                    '</td>'+
+                '</tr>'
+                $("#product_tbody").append(tag);
+                }
+                $(".product_delete").click(function(){
+                    if(!confirm("삭제 하시겠습니까?")) return;
+                    let seq = $(this).attr("data-seq");
+                    $.ajax({
+                        type:"delete",
+                        url:"/delete/product?seq="+seq,
+                        success:function(r){
+                            console.log(r);
+                            alert(r.message);
+                            location.reload();
+                        }
+                    })
+                })
+            }
+        })
+    }
 
     $("#save").click(function(){
         let pi_name = $("#pi_name").val();
@@ -73,65 +128,25 @@ $(function(){
             }
         })
     });
-
-    function getProduct(keyword, cate_seq, offset){
-        let url = "/product/list";
-        if(keyword == undefined || keyword == null) {
-            keyword = "";
-        }
-        url += "?keyword="+keyword
-        if(cate_seq != undefined && cate_seq != null) {
-            url += "&category="+cate_seq;
-        }
-        if(offset != undefined && offset != null) {
-            url += "&offset="+offset;
-        }
-    $.ajax({
-        type:"get",
-        url:url,
-        success:function(r){
-            for(let i=0; i<r.data.length; i++){
-                // console.log(r.data.length);
-                let tag =
-                '<tr>'+
-                '<td>'+(i+1)+'</td>'+
-                '<td>'+r.data[i].pi_name+'</td>'+
-                '<td>'+r.data[i].category_name+'</td>'+
-                '<td>'+r.data[i].pi_stock+'</td>'+
-                '<td>'+r.data[i].seller_name+'</td>'+
-                '<td>'+ makeDate(new Date(r.data[i].pi_create_dt))+'</td>'+
-                '<td>'+r.data[i].pi_discount_rate+'</td>'+
-                '<td>'+r.data[i].pi_point_rate+'</td>'+
-                '<td>'+r.data[i].pi_caution+'</td>'+
-                '<td>'+r.data[i].pi_weight+'</td>'+
-                '<td>'+r.data[i].delivery_name+'</td>'+
-                '<td>'+r.data[i].pi_price+'</td>'+
-                '<td>'+
-                '<button class="product_delete" data-seq="'+r.data[i].pi_seq+'">삭제</button>'+
-                '</td>'+
-            '</tr>'
-            $("#product_tbody").append(tag);
-            }
-            $(".product_delete").click(function(){
-                if(!confirm("삭제 하시겠습니까?")) return;
-                let seq = $(this).attr("data-seq");
-                $.ajax({
-                    type:"delete",
-                    url:"/delete/product?seq="+seq,
-                    success:function(r){
-                        console.log(r);
-                        alert(r.message);
-                        location.reload();
-                    }
-                })
-            })
-        }
+    
+    
+    $("#search").click(function(){
+        let seq = $("#cate_search option:selected").val();
+        let keyword = $("#search_keyword").val();
+        if(seq == "전체") seq = null;
+        getProduct(keyword, seq, 0);
     })
-    }
-    // $("#search").change(function(){
-    //     alert("변경");
-    // })
+
+    $("#cate_search").change(function(){
+        // alert("값 변경됨");
+        let seq = $("#cate_search option:selected").val();
+        // alert(seq);
+        let keyword = $("#search_keyword").val();
+        if(seq == "전체") seq = null;
+        getProduct(keyword, seq, 0);
+    })
 })
+
 function makeDate(dt) {
     return dt.getFullYear() + "-" + leadingZero(dt.getMonth() + 1) + "-" + leadingZero(dt.getDate());
 }
