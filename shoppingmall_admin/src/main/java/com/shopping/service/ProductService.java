@@ -8,6 +8,7 @@ import com.shopping.mapper.CategoryMapper;
 import com.shopping.mapper.DeliveryMapper;
 import com.shopping.mapper.ProductMapper;
 import com.shopping.mapper.SellerMapper;
+import com.shopping.vo.ProductImageVO;
 import com.shopping.vo.ProductVO;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,5 +47,11 @@ public class ProductService {
     }
     public void deleteProduct(Integer seq){
         mapper.deleteProduct(seq);
+    }
+    public void insertProductImages(ProductImageVO vo){
+        mapper.insertProductImages(vo);
+    }
+    public String selectProdImagePath(String uri){
+        return mapper.selectProdImagePath(uri);
     }
 }

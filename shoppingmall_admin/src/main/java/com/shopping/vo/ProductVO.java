@@ -22,6 +22,10 @@ public class ProductVO {
     private String category_name;
     private String delivery_name;
     private String seller_name;
+    
+    private String pi_img_uri;
+
+
 
 
 }

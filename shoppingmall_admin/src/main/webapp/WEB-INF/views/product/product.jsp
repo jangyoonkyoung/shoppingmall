@@ -10,6 +10,11 @@
     <title>Document</title>
     <script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="/assets/js/product.js"></script>
+    <style>
+    #img_preview img {
+        width: 200px;
+    }
+    </style>
 </head>
 <body>
     <%@include file="/WEB-INF/views/includes/header.jsp"%>
@@ -76,6 +81,19 @@
                                 <option value="${delivery.di_seq}">${delivery.di_name}</option>
                             </c:forEach>
                         </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>이미지</td>
+                    <td class="img_form_td" colspan="4">
+                        <span id="img_preview">
+                            
+                        </span>
+                        <form id="image_form">
+                            <input type = "file" accept="image/gif, image/jpeg, image/png" name="file" value="제품이미지 선택">
+                            <button type= "button" id="img_save">등록</button>
+                            <button type= "button" id="img_delete" disabled>삭제</button>
+                        </form>
                     </td>
                 </tr>
                 <tr>

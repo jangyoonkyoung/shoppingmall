@@ -99,6 +99,20 @@ $(function(){
             })
         }
     })
+    $("#img_save").click(function(){
+        let form = $("#image_form");
+        let formData = new FormData(form[0]) //파일 
+        $.ajax({
+            type:"post",
+            url:"/upload",
+            data: formData,
+            contentType:false,
+            processData:false,
+            success:function(r){
+                alert(r.message);
+            }
+        })
 
+    })
 
 })

@@ -1,0 +1,72 @@
+.header_top{background-color: #5f0080;}
+.header_top p{color: #fff; text-align: center; line-height: 42px;}
+.header_top b{font-weight: 500;}
+
+.header_top .container{width: 1050px; margin: 0 auto; position: relative; height: 42px;}
+.header_top a{position: absolute; right: 0; top: 0;}
+
+.hc_top{width: 1050px; margin: 0 auto; padding: 10px 0;}
+.hc_top #delivery img{width: 135px;}
+
+.user_menu{float: right; font-size: 14px;}
+.user_menu a{text-decoration: none; color: #333;}
+.user_menu span{font-size: 10px; color: #ccc; margin: 10px; position: relative; top: -1px;}
+
+.hc_mid{text-align: center;}
+#logo {margin-top: -30px; display: inline-block;}
+#logo img {width: 103px;}
+
+.header_content{width: 1050px; margin: 0 auto;}
+.hc_bot{width: 1050px; margin: 0 auto;}
+.hc_bot .main_menu a{text-decoration: none; color: #333;
+    display: inline-block; font-weight: 500; padding: 15px 35px;}
+#cate_all { 
+    background-image: url("/assets/images/ico_gnb_all_off.png");
+    background-repeat: no-repeat; background-position: 5px 17px; 
+}
+
+.search_box img {width: 30px;}
+.search_box button {padding: 0; margin: 0; border: 0; background-color: transparent; outline: none; cursor: pointer; height: 30px;}
+
+.search_box input{border: 0; outline:none; background-color: transparent; margin-left: 10px; width: 160px;}
+.search_box > * {vertical-align: middle;}
+.search_box {background-color: #f7f7f7; display: inline-block; padding:3px;
+    border-radius: 99px;}
+.search_area > * {vertical-align: middle;}
+.search_area{float: right; padding-top: 10px;}
+.main_menu{float: left;}
+.hc_bot{overflow: hidden;}
+
+.header_content {position: relative;}
+
+.categoryList{padding-top: 40px; position: absolute; left: 0; top: 110px; width: 240px;
+    display: none;}
+.categoryList a{
+    display: block; font-size: 14px; color: #333; text-decoration: none;
+    padding:15px; padding-left: 50px; background-repeat: no-repeat;
+    background-size: 25px; background-position: 15px 10px;
+}
+.cate_list{background-color: #fff; border: 1px solid #ccc;}
+
+.categoryList a:nth-child(1){background-image: url("/assets/images/카테고리 아이콘 (4).png");}
+.categoryList a:nth-child(2){background-image: url("/assets/images/카테고리 아이콘 (6).png");}
+.categoryList a:nth-child(3){background-image: url("/assets/images/카테고리 아이콘 (8).png");}
+.categoryList a:nth-child(4){background-image: url("/assets/images/카테고리 아이콘 (10).png");}
+.categoryList a:nth-child(5){background-image: url("/assets/images/카테고리 아이콘 (12).png");}
+.categoryList a:nth-child(6){background-image: url("/assets/images/카테고리 아이콘 (14).png");}
+.categoryList a:nth-child(7){background-image: url("/assets/images/카테고리 아이콘 (16).png");}
+.categoryList a:nth-child(8){background-image: url("/assets/images/카테고리 아이콘 (18).png");}
+.categoryList a:nth-child(9){background-image: url("/assets/images/카테고리 아이콘 (20).png");}
+.categoryList a:nth-child(10){background-image: url("/assets/images/카테고리 아이콘 (22).png");}
+.categoryList a:nth-child(11){background-image: url("/assets/images/카테고리 아이콘 (24).png");}
+.categoryList a:nth-child(12){background-image: url("/assets/images/카테고리 아이콘 (26).png");}
+.categoryList a:nth-child(13){background-image: url("/assets/images/카테고리 아이콘 (28).png");}
+.categoryList a:nth-child(14){background-image: url("/assets/images/카테고리 아이콘 (30).png");}
+.categoryList a:nth-child(15){background-image: url("/assets/images/카테고리 아이콘 (32).png");}
+.categoryList a:nth-child(16){background-image: url("/assets/images/카테고리 아이콘 (34).png");}
+.categoryList a:nth-child(17){background-image: url("/assets/images/카테고리 아이콘 (36).png");}
+.categoryList a:nth-child(18){background-image: url("/assets/images/카테고리 아이콘 (38).png");}
+
+.search_area > a {text-decoration: none;
+    margin-left: 10px;
+}

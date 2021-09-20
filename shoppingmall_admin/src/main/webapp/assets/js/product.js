@@ -1,5 +1,4 @@
 $(function(){
-
     getProduct();
     function getProduct(keyword, cate_seq, offset){
         $("#product_tbody").html("");
@@ -11,6 +10,7 @@ $(function(){
         if(cate_seq != undefined && cate_seq != null) {
             url += "&category="+cate_seq;
         }
+        //offset기능은 0:10이면 1부터 10까지 10이면 10부터 가져오는 역할을 한다.
         if(offset != undefined && offset != null) {
             url += "&offset="+offset;
         }
@@ -115,7 +115,8 @@ $(function(){
             pi_caution: pi_caution,
             pi_weight: pi_weight,
             pi_point_rate: pi_point_rate,
-            pi_di_seq: pi_di_seq
+            pi_di_seq: pi_di_seq,
+            // pi_img_uri = $("#img_preview").attr("img-uri")
         }   
         $.ajax({
             type:"post",
@@ -144,7 +145,31 @@ $(function(){
         let keyword = $("#search_keyword").val();
         if(seq == "전체") seq = null;
         getProduct(keyword, seq, 0);
-    })
+    });
+
+    $("#img_save").click(function(){
+        let form = $("#image_form");
+        let formData = new FormData(form[0]);
+        $.ajax({
+            url:"/upload",
+            type:"post",
+            data:formData,
+            contentType:false,
+            processData:false,
+            success:function(r) {
+                // alert(r.message);
+                console.log(r);
+                if(r.status){
+                    $("#img_save").prop("disabled", true);
+                    $("#img_delete").prop("disabled", false);
+                    $("#image_form > input").prop("disabled", true);
+                    $("#img_preview").append('<img src="/image/'+r.image_uri+'">');
+                    // $("#img_preview").attr("img-uri", r.image_uri);
+                }
+                alert(r.message);
+            }
+        })
+    });
 })
 
 function makeDate(dt) {
