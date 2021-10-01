@@ -10,4 +10,5 @@ public class ProductImageVO {
     private String pimg_uri;
     private Date pimg_reg_dt;
     private Integer pimg_size;
+    
 }

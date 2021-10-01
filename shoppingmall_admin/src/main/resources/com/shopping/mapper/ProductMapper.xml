@@ -5,9 +5,9 @@
 <insert id="insertProduct">
 INSERT INTO product_info
         (pi_name, pi_cate_seq, pi_stock, pi_si_seq, pi_discount_rate, pi_caution, 
-        pi_weight, pi_point_rate, pi_di_seq, pi_price)
+        pi_weight, pi_point_rate, pi_di_seq, pi_price, pi_img_uri)
 VALUES(#{pi_name}, #{pi_cate_seq}, #{pi_stock}, #{pi_si_seq}, #{pi_discount_rate}, #{pi_caution}, 
-        #{pi_weight}, #{pi_point_rate}, #{pi_di_seq}, #{pi_price});
+        #{pi_weight}, #{pi_point_rate}, #{pi_di_seq}, #{pi_price}, #{pi_img_uri});
 </insert>
 <select id="selectAllList" resultType="com.shopping.vo.ProductVO">
         select * from product_info where pi_name like #{keyword}
@@ -19,6 +19,7 @@ VALUES(#{pi_name}, #{pi_cate_seq}, #{pi_stock}, #{pi_si_seq}, #{pi_discount_rate
 <delete id="deleteProduct">
         delete from product_info where pi_seq=#{seq}
 </delete>
+<!-- 이미지 전송 -->
 <insert id="insertProductImages">
 INSERT INTO prod_image
         (pimg_file_name, pimg_uri, pimg_size)
