@@ -35,9 +35,16 @@
                         <img src = "/assets/images/샛별_ 택배 배송안내.png">
                     </a>
                 <div class="user_menu">
-                    <a href ="#">로그인</a>
+                    <c:if test="${member==null}">
+                    <a href ="/login">로그인</a>
                     <span>|</span>
-                    <a href ="/member">회원가입</a>
+                    <a href ="/join">회원가입</a>
+                    </c:if>
+                    <c:if test="${member !=null}">
+                        <a href="#">${member.mi_name}님</a>
+                        <span>|</span>
+                        <a href="/logout" id="logout">로그아웃</a>
+                    </c:if>
                     <span>|</span>
                     <a href ="#">고객선터<img src = "/assets/images/ico_quick_down_hover.png"></a>
                     <span>|</span>

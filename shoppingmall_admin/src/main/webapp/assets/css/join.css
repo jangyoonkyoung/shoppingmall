@@ -6,10 +6,10 @@
     font-weight: 500;
     margin-bottom: 50px;
     margin-top: 50px;
-    font-family: 'Cafe24Ssurround';
+    font-family: 'Noto Sans KR', sans-serif;
     font-weight: 100;
 }
-.join_table td{padding: 10px; font-family: 'Cafe24Ssurround';}
+.join_table td{padding: 10px; font-family: 'Noto Sans KR', sans-serif;}
 .join_table input, .join_table select {
     width: 300px;
     padding: 10px;
@@ -25,7 +25,7 @@
 }
 
 .join_table button {
-    font-family: 'Cafe24Ssurround';
+    font-family: 'Noto Sans KR', sans-serif;
     border: 0;
     border-radius: 3px;
     color: rgb(0, 0, 0);

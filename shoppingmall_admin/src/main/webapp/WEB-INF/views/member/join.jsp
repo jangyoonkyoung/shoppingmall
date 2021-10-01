@@ -1,5 +1,6 @@
 <%@page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@include file="/WEB-INF/views/includes/market_header.jsp"%>    
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +11,12 @@
     <script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="/assets/js/join.js"></script>  
     <link rel="stylesheet" href="/assets/css/join.css">
+     <!-- 로그인 되있는 상태에서 회원가입 불가능 -->
+    <script>
+        <c:if test="${member != null}">
+            location.href = "/";
+        </c:if>
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"
             integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -30,9 +37,9 @@
                 });
             }
         </script>
+        
 </head>
 <body>
-    <%@include file="/WEB-INF/views/includes/market_header.jsp"%>
     <h1 class="title">회원가입</h1>
     <table class="join_table">
         <tbody>

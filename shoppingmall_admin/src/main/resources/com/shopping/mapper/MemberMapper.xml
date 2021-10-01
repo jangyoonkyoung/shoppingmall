@@ -15,4 +15,11 @@
 <select id="selectMemberByEmail" resultType="java.lang.Integer">
     select count(*) from member_info where mi_email=#{email}
 </select>
+<!-- 로그인 -->
+<select id="memberLogin" resultType="java.lang.Integer">
+    select count(*) from member_info where mi_id=#{id} and mi_pwd = #{pwd}
+</select>
+<select id="selectMemberInfo" resultType="com.shopping.vo.MemberInfoVO">
+    select * from member_info where mi_id = #{id}
+</select>
 </mapper>
