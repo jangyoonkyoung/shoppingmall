@@ -15,17 +15,19 @@
 <body>
     <%@include file="/WEB-INF/views/includes/admin_header.jsp"%>
     <div class="container">
-        <h1>카테고리 추가</h1>
+        <h1>카테고리 관리</h1>
         <div class="cate_wrap">
+            <span>카테고리 명</span>
             <input type="text" id="cate_name">
-            <button id="add">추가</button>
+            <button class="add">추가</button>
         </div>
-        <div id="cate_list">
+        <div class="list">
             <table id="cate_table">
                 <thead>
                     <tr data-seq='${list.seq}'>
                         <td>번호</td>
                         <td>이름</td>
+                        <td></td>
                     </tr>
                 </thead>
                 <tbody id="cate_table_body">

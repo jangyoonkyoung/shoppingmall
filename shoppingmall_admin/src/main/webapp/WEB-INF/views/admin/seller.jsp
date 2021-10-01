@@ -9,11 +9,14 @@
     <title>판매자 페이지</title>
     <script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="/assets/js/seller.js"></script>
+    <link rel="stylesheet" href="/assets/css/reset.css">
+    <link rel="stylesheet" href="/assets/css/seller.css">
 </head>
 <body>
     <%@include file="/WEB-INF/views/includes/admin_header.jsp"%>
+    <h1 class="title">판매자 관리</h1>
     <div>
-        <table>
+        <table class="sel_table">
             <tbody>
                 <tr>
                     <td>아이디</td>
@@ -48,7 +51,7 @@
         </table>
         <div class="seller_list">
             <table class="seller_table">
-                <thead>
+                <thead class="seller_thead">
                     <tr>
                         <td>번호</td>
                         <td>아이디</td>
@@ -56,6 +59,7 @@
                         <td>이메일</td>
                         <td>전화번호</td>
                         <td>등급</td>
+                        <td></td>
                     </tr>
                 </thead>
                 <tbody class="seller_tbody">

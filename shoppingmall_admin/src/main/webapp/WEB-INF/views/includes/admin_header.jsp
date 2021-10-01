@@ -22,7 +22,7 @@
                     <a href="/category/add" id="category">카테고리 관리</a>
                 </li>
                 <li>
-                    <a href="/seller/regist" id="shop">업체 관리</a>
+                    <a href="/seller/regist" id="shop">판매자 관리</a>
                 </li>
                 <li>
                     <a href="/delivery/add" id="delivery">배송업체 관리</a>

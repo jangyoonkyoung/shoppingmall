@@ -1,5 +1,5 @@
 $(function(){
-    $("#add").click(function(){
+    $(".add").click(function(){
         let cate_name = $("#cate_name").val();
         if(cate_name == '' || cate_name == null || cate_name==undefined){
             alert("카테고리 명을 입력하세요");

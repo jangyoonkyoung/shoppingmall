@@ -1,29 +1,26 @@
-.container h1{
-    font-size: 50px; color: rgb(143, 142, 142);
+.title{
+    color: rgb(143, 142, 142);
     padding:10px; border-bottom: 1px solid #eee;
     margin-bottom: 10px;
+    font-size: 50px;
 }
-.cate_wrap input {
+.sel_table td { 
+    font-size: 18px;
+    font-family: 'Noto Sans KR', sans-serif;
+    padding: 5px;
+}
+.sel_table input{
     width: 250px; height: 10px; padding: 10px;
     outline: none; border: 1px solid #ddd; border-radius: 5px;
     background-color: #f7f7f7;
     margin-left: 10px; margin-right: 10px;
     font-family: 'Noto Sans KR', sans-serif;
 }
-.list table td {
-    border-bottom: 1px solid #ccc; padding: 10px;
-    vertical-align: middle; text-align: center;
+.seller_thead td{
+    background-color: #5f0080; color: #fff;
 }
-.list table tr:nth-child(even) {
-    background-color: #fbfbfb;
-}
-.list table {min-width: 1050px; margin-top: 30px; margin-bottom: 300px;}
-.list thead td{background-color: #5f0080; color: #fff;}
-
-body > h1 {font-size: 32px; font-weight: 400; margin-bottom: 30px;}
-
-.add{
-    width: 50px;
+#dup_check, #dup_check_Email, #regist {
+    width:80px;
     height: 30px;
     color: #5f0080;
     background-color: #fff;
@@ -32,7 +29,7 @@ body > h1 {font-size: 32px; font-weight: 400; margin-bottom: 30px;}
     font-family: 'Noto Sans KR', sans-serif;
     cursor: pointer;
 }
-.cate_del {
+.delete{
     width:60px;
     height: 30px;
     color: #f7f7f7;
@@ -41,4 +38,8 @@ body > h1 {font-size: 32px; font-weight: 400; margin-bottom: 30px;}
     border-radius: 3px;
     font-family: 'Noto Sans KR', sans-serif;
     cursor: pointer;
+}
+.seller_list table td {
+    border-bottom: 1px solid #ccc; padding: 10px;
+    vertical-align: middle; text-align: center;
 }
