@@ -15,7 +15,7 @@ public class DeliveryService {
     @Autowired DeliveryMapper mapper;
     public Map<String, Object> insertDelivery(DeliveryVO vo){
         Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
-        boolean doplicated =isDoplicatedByName(vo.getDi_name());
+        boolean doplicated =isDuplicatedByName(vo.getDi_name());
         if(doplicated){
             resultMap.put("status", false);
             resultMap.put("message", "이미 등록된 배송업체가 존재합니다.");
@@ -28,7 +28,7 @@ public class DeliveryService {
         return resultMap;
         
     }
-    public boolean isDoplicatedByName(String name){
+    public boolean isDuplicatedByName(String name){
         return mapper.selectDeliveryById(name) > 0;
     }
     public List<DeliveryVO> selectDeliveryAll(){

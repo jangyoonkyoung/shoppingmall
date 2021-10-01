@@ -25,7 +25,7 @@ public class DeliveryAPIController {
     @GetMapping("/delivery/chk")
     public Map<String, Object> getDeliveryName(@RequestParam String name){
         Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
-        boolean r = service.isDoplicatedByName(name);
+        boolean r = service.isDuplicatedByName(name);
         if(r){
             resultMap.put("message","["+name+"은 이미 존재합니다.");
         }

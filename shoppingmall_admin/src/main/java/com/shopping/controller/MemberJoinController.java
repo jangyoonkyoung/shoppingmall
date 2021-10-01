@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class MemberJoinController {
     @GetMapping("/member")
     public String getMember(){
-        return "/market/join";
+        return "/member/join";
     }
 }

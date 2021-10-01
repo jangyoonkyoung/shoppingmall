@@ -1,0 +1,47 @@
+/* 클래스 이름이 title 인 것 */
+.title {
+    /* tac+fz28+fw500+mb50+mt50 */
+    text-align: center;
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    font-family: 'Cafe24Ssurround';
+    font-weight: 100;
+}
+.join_table td{padding: 10px; font-family: 'Cafe24Ssurround';}
+.join_table input, .join_table select {
+    width: 300px;
+    padding: 10px;
+    outline:none;
+    border: 1px solid #ddd;
+    background-color: #f7f7f7;
+    border-radius: 5px;
+}
+.join_table #user_birth_year,
+.join_table #user_birth_month,
+.join_table #user_birth_date {
+    width: 50px;
+}
+
+.join_table button {
+    font-family: 'Cafe24Ssurround';
+    border: 0;
+    border-radius: 3px;
+    color: rgb(0, 0, 0);
+    padding:10px 20px;
+    cursor:pointer;
+    
+}
+.join_table #join {
+    width: 200px;  margin-left: 50%px;
+}
+.join_table >td{width: 540px;}
+
+.join_table button:hover {
+    background-color: #5f0080;
+}
+.join_table {margin:0 auto;}
+.join_table tr:last-child {text-align: center;}
+.join_table select {width:322px;}
+body {background-color: #fcfcfc;}
