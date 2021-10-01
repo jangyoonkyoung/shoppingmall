@@ -31,6 +31,6 @@ public class ProductController {
         model.addAttribute("dlist", dlist);
         model.addAttribute("slist", slist);
 
-        return "/product/product";
+        return "/admin/product";
     }
 }

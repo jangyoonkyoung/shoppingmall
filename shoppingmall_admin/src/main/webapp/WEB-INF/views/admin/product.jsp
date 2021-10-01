@@ -17,7 +17,7 @@
     </style>
 </head>
 <body>
-    <%@include file="/WEB-INF/views/includes/header.jsp"%>
+    <%@include file="/WEB-INF/views/includes/admin_header.jsp"%>
     <h1>상품관리</h1>
     <div>
         <table>

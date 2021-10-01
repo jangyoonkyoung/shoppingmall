@@ -1,0 +1,6 @@
+.main_banner_area {
+    min-width: 1050; height: 370px; margin-bottom: 10px;
+}
+.banner_item{width: 100%; height: 100%; background-position: center; margin-top: 5px;
+background-image: url("/assets/images/pc_img_1621561009.jpg");
+}

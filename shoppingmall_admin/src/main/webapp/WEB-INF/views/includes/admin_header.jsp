@@ -16,6 +16,9 @@
         <nav id="gnb">
             <ul>
                 <li>
+                    <a href="/" id="market">마켓컬리 사이트 이동</a>
+                </li>
+                <li>
                     <a href="/category/add" id="category">카테고리 관리</a>
                 </li>
                 <li>

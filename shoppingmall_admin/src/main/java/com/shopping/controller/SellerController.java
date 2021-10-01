@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class SellerController {
     @GetMapping("/seller/regist")
     public String getSeller(){
-        return "/seller/seller";
+        return "/admin/seller";
     }
 }

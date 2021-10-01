@@ -13,7 +13,7 @@
     <script src="/assets/js/category.js"></script>
 </head>
 <body>
-    <%@include file="/WEB-INF/views/includes/header.jsp"%>
+    <%@include file="/WEB-INF/views/includes/admin_header.jsp"%>
     <div class="container">
         <h1>카테고리 추가</h1>
         <div class="cate_wrap">

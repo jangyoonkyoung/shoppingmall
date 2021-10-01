@@ -37,9 +37,11 @@
                 <div class="user_menu">
                     <a href ="#">로그인</a>
                     <span>|</span>
-                    <a href ="#">회원가입</a>
+                    <a href ="/member">회원가입</a>
                     <span>|</span>
                     <a href ="#">고객선터<img src = "/assets/images/ico_quick_down_hover.png"></a>
+                    <span>|</span>
+                    <a href="/admin">관리자 페이지</a>
                 </div>
             </div>
             <div class="hc_mid">
@@ -54,6 +56,7 @@
                     <a href = "#">알뜰쇼핑</a>
                     <a href = "#">특가 / 세일</a>
                 </div>
+                
                 <div class="search_area">
                     <div class="search_box">
                         <input type="text" id="keyword">
@@ -72,11 +75,13 @@
             <div class="categoryList">
                 <div class="cate_list">
                     <c:forEach items="${cateList}" var="cate">
-                        <a href = "/product?cate_seq=${cate.cate_seq}">${cate.cate_name}</a>
+                        <a href = "#">${cate.cate_name}</a>
                     </c:forEach>   
                 </div>
             </div>
+            
         </div>
+        
     </header>
 </body>
 </html>    

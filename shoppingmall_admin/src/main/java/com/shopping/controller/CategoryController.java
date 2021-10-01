@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class CategoryController {
     @GetMapping("/category/add")
     public String getCategory(){
-        return "/category/add";
+        return "/admin/category";
     }
 }

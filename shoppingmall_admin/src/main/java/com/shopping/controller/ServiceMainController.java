@@ -13,6 +13,6 @@ public class ServiceMainController {
     @GetMapping("/")
     public String getMain(Model model){
         model.addAttribute("cateList", cate_mapper.cateListAll());
-        return "/admin_main/service_index";
+        return "/admin_main/market_index";
     }
 }

@@ -11,7 +11,7 @@
     <script src="/assets/js/seller.js"></script>
 </head>
 <body>
-    <%@include file="/WEB-INF/views/includes/header.jsp"%>
+    <%@include file="/WEB-INF/views/includes/admin_header.jsp"%>
     <div>
         <table>
             <tbody>

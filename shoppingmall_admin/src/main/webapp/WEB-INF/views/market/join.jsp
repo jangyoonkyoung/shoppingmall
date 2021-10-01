@@ -6,10 +6,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <title>마켓컬리 :: 회원가입</title>
 </head>
 <body>
-    <%@include file="/WEB-INF/views/includes/header.jsp"%>
+    
 </body>
 </html>    
