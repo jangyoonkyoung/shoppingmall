@@ -1,5 +1,7 @@
 package com.shopping.mapper;
 
+import java.util.List;
+
 import com.shopping.vo.LoginVO;
 import com.shopping.vo.MemberInfoVO;
 
@@ -12,4 +14,6 @@ public interface MemberMapper {
     public Integer selectMemberByEmail(String email);
     public Integer memberLogin(LoginVO vo);
     public MemberInfoVO selectMemberInfo(String id);
+    public List<MemberInfoVO> selectMemberList ();
+    public void deleteMember(Integer seq);
 }

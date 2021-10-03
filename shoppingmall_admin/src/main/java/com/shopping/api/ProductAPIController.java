@@ -12,6 +12,7 @@ import org.springframework.lang.Nullable;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -45,6 +46,38 @@ public class ProductAPIController {
         service.deleteProduct(seq);
         resultMap.put("message","삭제되었습니다.");
         return resultMap;
-        
+    }
+    //추천상품 가져오기
+    @GetMapping("/api/recommand")
+    public Map<String, Object> getRecommand(){
+        Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
+        List<ProductVO> list = service.selectRecommand();
+        resultMap.put("status",true);
+        resultMap.put("list",list);
+        return resultMap;
+    }
+    @GetMapping("/api/notRecommand")
+    public Map<String, Object> getNotRecommand(){
+        Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
+        List<ProductVO> list = service.selectNotRecommand();
+        resultMap.put("status",true);
+        resultMap.put("list",list);
+        return resultMap;
+    }
+    @DeleteMapping("/api/deleteRecommand")
+    public Map<String, Object> deleteRecommand(Integer prod_seq){
+        Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
+        service.deleteRecommand(prod_seq);
+        resultMap.put("status",true);
+        resultMap.put("message","추천 상품이 삭제 되었습니다");
+        return resultMap;
+    }
+    @PutMapping("/api/addRecommand")
+    public Map<String, Object> addRecommand(Integer prod_seq){
+        Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
+        service.insertRecommand(prod_seq);
+        resultMap.put("status",true);
+        resultMap.put("message","추천 상품이 추가 되었습니다");
+        return resultMap;
     }
 }

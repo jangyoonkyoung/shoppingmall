@@ -24,6 +24,7 @@ $(function(){
                     '<tr>'+
                     '<td>'+(i+1)+'</td>'+
                     '<td>'+r.data[i].pi_name+'</td>'+
+                    '<td class="preview"><img src = "/image/'+r.data[i].pi_img_uri+'"></td>'+
                     '<td>'+r.data[i].category_name+'</td>'+
                     '<td>'+r.data[i].pi_stock+'</td>'+
                     '<td>'+r.data[i].seller_name+'</td>'+
@@ -124,7 +125,7 @@ $(function(){
             data:JSON.stringify(data),
             contentType:"application/json",
             success:function(r){
-                alert(r.message);
+                // alert(r.message);
                 location.reload();
             }
         })
@@ -170,6 +171,18 @@ $(function(){
             }
         })
     });
+    $("#img_delete").click(function(){
+        let uri = $("#img_preview").attr("img_uri");
+        $("#img_preview").html("");
+
+        $("#image_form > input").val("");
+        $(this).prop("disabled", true);
+        $("#image_form > input").prop("disabled", false);
+        $("#img_save").prop("disabled", false);
+
+        alert("등록된 사진이 삭제되었습니다.");
+        
+    })
 })
 
 function makeDate(dt) {

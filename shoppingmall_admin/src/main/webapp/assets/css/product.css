@@ -1,0 +1,70 @@
+.title{
+    color: rgb(143, 142, 142);
+    padding:10px; border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
+    font-size: 50px;
+}
+
+/* .product_form {
+    position: fixed; background-color: #fff;
+    z-index: 999; 
+    padding: 20px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    padding-top: 80px;
+    border-radius: 5px;
+    left: 40%; margin-left: -130px; 
+    display: none;
+} */
+.img_preview img {
+    width: 200px;
+}
+.preview img{
+    width: 50px;
+}
+
+.product_form input {
+    width: 200px; font-family: "Noto Sans KR", sans-serif;
+    outline: none; padding:7px 10px; margin-bottom: 10px; 
+    border: 1px solid #aaa; border-radius: 3px;
+}
+.product_form select{
+    width: 223px; font-family: "Noto Sans KR", sans-serif;
+    outline: none; padding:7px 10px; margin-bottom: 10px;
+    border: 1px solid #aaa; border-radius: 3px;
+}
+
+.product_form textarea{
+    width: 202px; font-family: "Noto Sans KR", sans-serif;
+    outline: none; padding:7px 10px; margin-bottom: 10px;
+    border: 1px solid #aaa; border-radius: 3px;
+    resize: none;
+}
+
+#save {
+    width: 100%;
+    margin-top: 10px;
+    font-weight: 500;
+    border-radius: 3px;
+    border: 1px solid #5f0080;
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #fff;
+    color: #5f0080; padding: 10px 20px;
+    cursor: pointer;
+}
+
+.product_table td:nth-child(3) {padding-left: 20px;}
+.product_table input {vertical-align: middle; margin-bottom: 0;}
+.product_table select {vertical-align: middle; margin-bottom: 0;}
+.product_table textarea {vertical-align: middle; margin-bottom: 0;
+width: 96%;}
+.product_table td {padding-bottom: 10px; padding-right: 10px;}
+
+#product_list_table td {
+    border-bottom: 1px solid #ccc; padding: 10px;
+    vertical-align: middle; text-align: center;
+}
+#product_list_table tr:nth-child(even) {
+    background-color: #fbfbfb;
+}
+#product_list_table {min-width: 1050px; margin-top: 30px; margin-bottom: 300px;}
+#product_list_table thead td {background-color: #5f0080; color: #fff;}

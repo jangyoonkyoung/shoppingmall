@@ -1,6 +1,7 @@
 package com.shopping.api;
 
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpSession;
@@ -9,7 +10,9 @@ import com.shopping.service.MemberService;
 import com.shopping.vo.LoginVO;
 import com.shopping.vo.MemberInfoVO;
 
+import org.apache.ibatis.annotations.Delete;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -63,5 +66,21 @@ public class MemberAPIController {
         
         return resultMap;
     }
+    @GetMapping("/member/list")
+    public Map<String, Object> getMemberList(){
+        Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
 
+        List<MemberInfoVO> list = service.selectMemberList();
+        resultMap.put("data", list);
+
+        return resultMap;
+    }
+    @DeleteMapping("/member/delete")
+    public Map<String, Object> deleteMemberInfo(@RequestParam Integer seq){
+        Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
+
+        service.deleteMember(seq);
+        resultMap.put("message","삭제가 되었습니다.");
+        return resultMap;
+    }
 }

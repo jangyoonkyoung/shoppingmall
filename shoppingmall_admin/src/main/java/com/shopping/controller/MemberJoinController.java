@@ -20,4 +20,8 @@ public class MemberJoinController {
         session.invalidate();
         return "redirect:/";
     }
+    @GetMapping("/member")
+    public String getMemberInfo(){
+        return "/member/member";
+    }
 }

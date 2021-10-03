@@ -1,0 +1,12 @@
+.title{
+    color: rgb(143, 142, 142);
+    padding:10px; border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
+    font-size: 50px;
+}
+.member_list td{
+    border-bottom: 1px solid #ccc; padding: 10px;
+    vertical-align: middle; text-align: center;
+}
+
+thead td {background-color: #5f0080; color: #fff;}

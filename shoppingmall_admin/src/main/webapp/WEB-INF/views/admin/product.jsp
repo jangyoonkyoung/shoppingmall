@@ -10,6 +10,7 @@
     <title>Document</title>
     <script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="/assets/js/product.js"></script>
+    <link rel="stylesheet" href="/assets/css/product.css">
     <style>
     #img_preview img {
         width: 200px;
@@ -18,9 +19,9 @@
 </head>
 <body>
     <%@include file="/WEB-INF/views/includes/admin_header.jsp"%>
-    <h1>상품관리</h1>
-    <div>
-        <table>
+    <h1 class="title">상품관리</h1>
+    <div class="product_form">
+        <table class="product_table">
             <tbody>
                 <tr>
                     <td>상품명</td>
@@ -116,11 +117,12 @@
             <input type="text" id="search_keyword" placeholder="제품명검색">
             <button id="search">검색</button>
         </div>
-    <table id="product_table">
+    <table id="product_list_table">
         <thead>
             <tr>
                 <td>번호</td>
                 <td>제품명</td>
+                <td>제품이미지</td>
                 <td>카테고리</td>
                 <td>재고</td>
                 <td>업체명</td>
@@ -131,6 +133,7 @@
                 <td>무게</td>
                 <td>배송사</td>
                 <td>가격</td>
+                <td></td>
             </tr>
         </thead>
         <tbody id="product_tbody">

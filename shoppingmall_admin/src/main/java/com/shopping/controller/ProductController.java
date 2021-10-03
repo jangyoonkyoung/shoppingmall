@@ -33,4 +33,8 @@ public class ProductController {
 
         return "/admin/product";
     }
+    @GetMapping("/recommand")
+    public String getRecommand(){
+        return "/admin/recommand";
+    }
 }

@@ -15,11 +15,20 @@
 <select id="selectMemberByEmail" resultType="java.lang.Integer">
     select count(*) from member_info where mi_email=#{email}
 </select>
-<!-- 로그인 -->
+<!-- 로그인 ::아이디와 비밀번호 보고 가입된 회원이 있는가?-->
 <select id="memberLogin" resultType="java.lang.Integer">
     select count(*) from member_info where mi_id=#{id} and mi_pwd = #{pwd}
 </select>
+<!-- 로그인 :: 맞다면 정보 내보내주자 -->
 <select id="selectMemberInfo" resultType="com.shopping.vo.MemberInfoVO">
     select * from member_info where mi_id = #{id}
 </select>
+<!-- 회원 리스트 보내기 -->
+<select id="selectMemberList" resultType="com.shopping.vo.MemberInfoVO">
+    select * from member_info
+</select>
+<!-- 회원 삭제 -->
+<delete id="deleteMember">
+    delete from member_info where mi_seq=#{seq}
+</delete>
 </mapper>

@@ -14,4 +14,8 @@ public interface ProductMapper {
     public void deleteProduct(Integer seq); 
     public void insertProductImages(ProductImageVO vo);
     public String selectProdImagePath(String uri);
+    public List<ProductVO> selectRecommand();
+    public List<ProductVO> selectNotRecommand();
+    public void insertRecommand(Integer prod_seq);
+    public void deleteRecommand(Integer prod_seq);
 }

@@ -28,5 +28,19 @@ VALUES
 </insert>
 <select id="selectProdImagePath" resultType="java.lang.String">
         select pimg_file_name from prod_image where pimg_uri = #{uri} order by pimg_seq desc limit 1
-</select>        
+</select>
+<!-- 추천상품 리스트 가져오기 -->
+<select id="selectRecommand" resultType="com.shopping.vo.ProductVO">
+        select * from product_info a inner join recommand b on a.pi_seq = b.reco_pi_seq;
+</select>
+<!-- 추천되지않는 상품 리스트 가져오기 -->
+<select id="selectNotRecommand" resultType="com.shopping.vo.ProductVO">
+        select a.* from product_info a left outer join recommand b on a.pi_seq = b.reco_pi_seq where b.reco_pi_seq is null;
+</select>
+<insert id="insertRecommand">
+        INSERT INTO recommand (reco_pi_seq) VALUES(#{prod_seq});
+</insert>
+<delete id="deleteRecommand">
+        DELETE FROM recommand WHERE reco_pi_seq=#{prod_seq};
+</delete>
 </mapper>

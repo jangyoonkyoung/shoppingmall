@@ -43,4 +43,19 @@
     font-family: 'Noto Sans KR', sans-serif;
     cursor: pointer;
 
+}.product_form input {
+    width: 200px; font-family: "Noto Sans KR", sans-serif;
+    outline: none; padding:7px 10px; margin-bottom: 10px; 
+    border: 1px solid #aaa; border-radius: 3px;
+}
+.product_form select {
+    width: 223px; font-family: "Noto Sans KR", sans-serif;
+    outline: none; padding:7px 10px; margin-bottom: 10px;
+    border: 1px solid #aaa; border-radius: 3px;
+}
+.product_form textarea{
+    width: 202px; font-family: "Noto Sans KR", sans-serif;
+    outline: none; padding:7px 10px; margin-bottom: 10px;
+    border: 1px solid #aaa; border-radius: 3px;
+    resize: none;
 }

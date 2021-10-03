@@ -31,10 +31,10 @@
                     <a href="/product" id="product">상품 관리</a>
                 </li>
                 <li>
-                    <a href="#" id="member">회원 관리</a>
+                    <a href="/member" id="member">회원 관리</a>
                 </li>
                 <li>
-                    <a href="#" id="recommand">추천상품 관리</a>
+                    <a href="/recommand" id="recommand">추천상품 관리</a>
                 </li>
             </ul>
         </nav>

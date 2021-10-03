@@ -54,4 +54,40 @@ public class ProductService {
     public String selectProdImagePath(String uri){
         return mapper.selectProdImagePath(uri);
     }
+    //추천상품 리스트 
+    public List<ProductVO> selectRecommand(){
+        List<ProductVO> list = mapper.selectRecommand();
+
+        for(int i=0; i<list.size(); i++){
+            String cate_name = cate_mapper.selectCategoryByName(list.get(i).getPi_cate_seq());
+            list.get(i).setCategory_name(cate_name);
+        }
+        for(int i=0; i<list.size(); i++){
+            String seller_name = sel_mapper.selectSellerName(list.get(i).getPi_si_seq());
+            list.get(i).setSeller_name(seller_name);
+        }
+        return list;
+    }
+    //추천되지 않는 상품
+    public List<ProductVO> selectNotRecommand(){
+        List<ProductVO> list = mapper.selectNotRecommand();
+
+        for(int i=0; i<list.size(); i++){
+            String cate_name = cate_mapper.selectCategoryByName(list.get(i).getPi_cate_seq());
+            list.get(i).setCategory_name(cate_name);
+        }
+        for(int i=0; i<list.size(); i++){
+            String seller_name = sel_mapper.selectSellerName(list.get(i).getPi_si_seq());
+            list.get(i).setSeller_name(seller_name);
+        }
+        return list;
+    }
+    //추천상품 추가
+    public void insertRecommand(Integer prod_seq){
+        mapper.insertRecommand(prod_seq);
+    }
+    //추천상품 삭제
+    public void deleteRecommand(Integer prod_seq){
+        mapper.deleteRecommand(prod_seq);
+    }
 }
