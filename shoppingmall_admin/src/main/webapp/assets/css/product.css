@@ -5,16 +5,6 @@
     font-size: 50px;
 }
 
-/* .product_form {
-    position: fixed; background-color: #fff;
-    z-index: 999; 
-    padding: 20px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.3);
-    padding-top: 80px;
-    border-radius: 5px;
-    left: 40%; margin-left: -130px; 
-    display: none;
-} */
 .img_preview img {
     width: 200px;
 }
@@ -68,3 +58,14 @@ width: 96%;}
 }
 #product_list_table {min-width: 1050px; margin-top: 30px; margin-bottom: 300px;}
 #product_list_table thead td {background-color: #5f0080; color: #fff;}
+    
+.product_delete{
+    width:60px;
+    height: 30px;
+    color: #f7f7f7;
+    background-color: rgb(185, 185, 185);
+    border: 1px solid #ffffff;
+    border-radius: 3px;
+    font-family: 'Noto Sans KR', sans-serif;
+    cursor: pointer;
+}

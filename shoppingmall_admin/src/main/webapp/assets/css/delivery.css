@@ -59,3 +59,7 @@
     border: 1px solid #aaa; border-radius: 3px;
     resize: none;
 }
+
+.delivery_table tr:nth-child(even) {
+    background-color: #fbfbfb;
+}

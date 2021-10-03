@@ -19,13 +19,7 @@
 
             </div>
         </section>
-        <section class="recommand_prod_area">
-            <div class="recommand_wrap">
-                <div class="recommand_item_prod_item">
-                    
-                </div>
-            </div>
-        </section>
+        
     </main>
     <%@include file="/WEB-INF/views/includes/footer.jsp"%>
 </body>

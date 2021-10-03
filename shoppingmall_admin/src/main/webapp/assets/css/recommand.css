@@ -50,3 +50,32 @@
 .add_recommand_tbody img{width: 100px;}
 .add_recommand_tbody td{ border-bottom: 1px solid #ccc; padding: 10px;
     vertical-align: middle; text-align: center;}
+.pop_add_recommand {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #fff;
+    color: #5f0080;
+    border: 1px solid #5f0080;
+    border-radius: 3px;
+    cursor: pointer;
+    height: 30px;
+    width: 50px;
+}
+.pop_title{font-size: 15px;}
+.close {
+    position: absolute; right: 35px; bottom: 20px;
+    color: #fff;
+    background-color: #5f0080;
+    border: 1px solid #5f0080;
+    border-radius: 5px;
+    height: 35px; width: 80px;
+}
+.delete{
+    width:60px;
+    height: 30px;
+    color: #f7f7f7;
+    background-color: rgb(185, 185, 185);
+    border: 1px solid #ffffff;
+    border-radius: 3px;
+    font-family: 'Noto Sans KR', sans-serif;
+    cursor: pointer;
+}

@@ -7,7 +7,7 @@ $(function(){
             for(let i=0; i<r.data.length; i++){
                 let tag = 
                 '<tr>'+
-                    '<td>'+r.data[i].mi_seq+'</td>'+
+                    '<td>'+(i+1)+'</td>'+
                     '<td>'+r.data[i].mi_id+'</td>'+
                     '<td>'+r.data[i].mi_name+'</td>'+
                     '<td>'+r.data[i].mi_email+'</td>'+

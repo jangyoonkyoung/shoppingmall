@@ -10,3 +10,18 @@
 }
 
 thead td {background-color: #5f0080; color: #fff;}
+
+.member_list tr:nth-child(even) {
+    background-color: #fbfbfb;
+}
+
+.member_delete{
+    width:60px;
+    height: 30px;
+    color: #f7f7f7;
+    background-color: rgb(185, 185, 185);
+    border: 1px solid #ffffff;
+    border-radius: 3px;
+    font-family: 'Noto Sans KR', sans-serif;
+    cursor: pointer;
+}
